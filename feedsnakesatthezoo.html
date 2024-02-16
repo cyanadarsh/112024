@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Snakes At The Cyanea City Zoo!</title>
+</head>
+<body>
+    <style>
+body { text-align: center; background-color:  black; color: white;
+}
+
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: gray;
+}
+
+.active {
+  background-color: rgb(18, 209, 209);
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(23, 202, 202);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: left;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.p2 { font-weight: bold; }
+
+canvas {box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.917);}
+
+    </style>
+
+<div class="navbar">
+    <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i>Return Home</a> 
+    <a href="assessmentplaces.html"><i class="fa fa-fw fa-envelope"></i> Go Back To Places</a> 
+ 
+    <span style="font-size: 36px; color:white; position:absolute; 
+    right: 30px;top:6px;" onclick="openNav()">&#8801;</span>
+  </div>
+
+
+<div id="mySidenav" class="sidenav" style="text-align:left;">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="assessmentabout.html">About Our City</a>
+    <a href="assessmentplaces.html">Places of Interest</a>
+    <a href="assessmentnews.html">Latest News</a>
+    <a href="assessmentdonate.html">Donate</a>
+    <br>
+  <br>
+  <img width="220"; height="176" src="Media/CityFOrWebsite.jpeg" style="position: absolute; left: 15px;">
+    <br> <p2 style="color: rgba(255, 255, 255, 0.779); font-weight: bold; text-align: center; font-size: 26px;
+    position: absolute; left: 31px;">"A place where <br>
+      dreams come true <br>
+      and where trash <br>
+      gets recycled."
+  </p2>
+    
+  </div>
+
+  <br>
+
+<div style="position: absolute; left: 50px; top: 200px;">
+    <img width=510px; height=220px src="Media/howtoplay.png">
+</div>
+
+<div style="position: absolute; left: 80px; top: 500px; text-align: left; font-size: 22px;">
+    <p1>-Don't Hit Your Snake Body! <br>
+    -Don't Hit Your Head On The Walls! <br>
+    -Use the arrow keys to move around and eat! <br>
+    -The Snake is Green, eat the red food to grow bigger!
+    </p1>
+</div>
+
+<br>
+<div style="font-size: 22px;">
+    <h1>Feed Snakes At The Cyanea City Zoo!</h1>
+</div>
+<br>
+        <canvas style="position: absolute; left: 650px; top: 170px;" id="board"></canvas>
+
+
+        <script>
+
+             function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+
+var blockSize = 25;
+var rows = 20;
+var cols = 20;
+var board;
+var context; 
+
+
+var snakeX = blockSize * 5;
+var snakeY = blockSize * 5;
+
+var velocityX = 0;
+var velocityY = 0;
+
+var snakeBody = [];
+
+
+var foodX;
+var foodY;
+
+var gameOver = false;
+
+window.onload = function() {
+    board = document.getElementById("board");
+    board.height = rows * blockSize;
+    board.width = cols * blockSize;
+    context = board.getContext("2d"); 
+
+    placeFood();
+    document.addEventListener("keyup", changeDirection);
+   
+    setInterval(update, 1000/10); 
+}
+
+function update() {
+    if (gameOver) {
+        return;
+    }
+
+    context.fillStyle="#100f0f";
+    context.fillRect(0, 0, board.width, board.height);
+
+    context.fillStyle="red";
+    context.fillRect(foodX, foodY, blockSize, blockSize);
+
+    if (snakeX == foodX && snakeY == foodY) {
+        snakeBody.push([foodX, foodY]);
+        placeFood();
+    }
+
+    for (let i = snakeBody.length-1; i > 0; i--) {
+        snakeBody[i] = snakeBody[i-1];
+    }
+    if (snakeBody.length) {
+        snakeBody[0] = [snakeX, snakeY];
+    }
+
+    context.fillStyle="lime";
+    snakeX += velocityX * blockSize;
+    snakeY += velocityY * blockSize;
+    context.fillRect(snakeX, snakeY, blockSize, blockSize);
+    for (let i = 0; i < snakeBody.length; i++) {
+        context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
+    }
+
+  
+    if (snakeX < 0 || snakeX > cols*blockSize || snakeY < 0 || snakeY > rows*blockSize) {
+        gameOver = true;
+        alert("Whoopsies - Looks like the Snake got a little concussion and doesn't feel like eating! Refresh the page to feed another one! Or you can check out more of the website!");
+    }
+
+    for (let i = 0; i < snakeBody.length; i++) {
+        if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
+            gameOver = true;
+            alert("Oh man - Looks like the Snake got too full! Refresh the page to feed another one! Or you can check out more of the website!");
+        }
+    }
+}
+
+function changeDirection(e) {
+    if (e.code == "ArrowUp" && velocityY != 1) {
+        velocityX = 0;
+        velocityY = -1;
+    }
+    else if (e.code == "ArrowDown" && velocityY != -1) {
+        velocityX = 0;
+        velocityY = 1;
+    }
+    else if (e.code == "ArrowLeft" && velocityX != 1) {
+        velocityX = -1;
+        velocityY = 0;
+    }
+    else if (e.code == "ArrowRight" && velocityX != -1) {
+        velocityX = 1;
+        velocityY = 0;
+    }
+}
+
+
+function placeFood() {
+   
+    foodX = Math.floor(Math.random() * cols) * blockSize;
+    foodY = Math.floor(Math.random() * rows) * blockSize;
+}
+
+     </script>
+</body>
+</html>

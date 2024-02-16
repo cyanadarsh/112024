@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyanea City Narnia</title>
+    <link rel="icon" type="image/x-icon" href="Images/C LOGO ICON.jpg">
+    <style>
+body {background-color: #000000;}
+
+html {
+  scroll-behavior: smooth;
+}
+     
+        .navbar {
+  width: 110%;
+  background-color: rgb(31, 30, 30);
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: gray;
+}
+
+.active {
+  background-color: rgb(18, 209, 209);
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(23, 202, 202);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.p2 { font-weight: bold; }
+
+.hero-btn {display: inline-block; text-decoration: none;
+    color: #0dd1ce; border: 3px solid; padding: 12px 34px; font-size: 16px;
+background: transparent; position: relative; cursor: pointer;
+}
+
+.hero-btn:hover { display: inline-block; text-decoration: none;
+    color: #bcbfbf; border: 3px solid; padding: 12px 34px; font-size: 16px;
+background: transparent; position: relative; cursor: pointer;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.524);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: rgb(255, 255, 255);
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #625d5d;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;}
+
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="assessmentplaces.html">Places of Interest</a>
+  <a href="assessmentnews.html">Latest News</a>
+  <a href="assessmentdonate.html">Donate</a>
+  <br>
+<br>
+<img width="220"; height="176" src="Media/CityFOrWebsite.jpeg" style="position: absolute; left: 15px;">
+  <br> <p2 style="color: rgba(255, 255, 255, 0.779); font-weight: bold; text-align: center; font-size: 26px;
+  position: absolute; left: 31px;">A place where <br>
+    dreams come true <br>
+    and where trash <br>
+    gets recycled."
+</p2>
+  
+</div>
+
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
+</head>
+
+
+    <div class="navbar">
+        <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i>Home</a> 
+        <a href="assessmentplaces.html"><i class="fa fa-fw fa-envelope"></i> Places Of Interest</a> 
+        <a href="assessmentnews.html"><i class="fa fa-fw fa-user"></i>Latest News</a>
+        <a href="assessmentdonate.html"><i class="fa fa-fw fa-search"></i>Donate</a>
+        <span style="font-size: 36px; color:white; position:absolute; 
+        right: 30px;top:6px;" onclick="openNav()">&#8801;</span>
+      </div>
+     
+      <div style="color: rgb(255, 255, 255); text-align: center; font-size: 24px;">
+        <h1>Donate To One of Our Esteemed Foundations</h1>
+        </div> 
+
+<div class="column">
+    <div class="card">
+      <img src="Media/hospital.png" style="width:450px; height:243px;">
+      <div class="container">
+        <h2 style="color: white; font-size: 22px;">Cyanea City's Medical Research Endowment</h2>
+        <p style="color: rgba(255, 255, 255, 0.807);" class="title">CEO & Founder: Cyan Adarsh</p>
+        <p style="color: white;">A Health Facility which prides itself on discovering solutions. 
+            Knowledge is power and we have the best researchers and scientists gaining knowledge on 
+            how to save people from the daunting diseases of our day.</p>
+        <p style="color: white;">Contact Them: 0850 SAVINGLIVES</p>
+        <p><a href="assessmentdonateform.html" class="hero-btn">Donate Now</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="Media/Thrifty.jpeg" style="width:450px; height:243px;">
+      <div class="container">
+        <h2 style="color: white; font-size: 22px;">Cyan's Thirfts & Donations</h2>
+        <p style="color: rgba(255, 255, 255, 0.807);" class="title">CEO & Founder: Cyan Adarsh</p>
+        <p style="color: white;">We provide people with little-none with opportunities, clothes and confidence - 
+            giving them clothes and makeovers if they have an interview, 
+        hearing in Court, or any other circumstance which needs them to look and feel at their best.</p>
+        <p style="color: white;">Contact Them: 0850 VOTEOFCONFIDENCE</p>
+        <p><a href="assessmentdonateform.html" class="hero-btn">Donate Now</a></p>
+      </div>
+    </div>
+  </div>
+
+            
+            <div class="column">
+                <div class="card">
+                  <img src="Media/Children'sCharity.jpeg" style="width:450px; height:225px;">
+                  <div class="container">
+                    <h2 style="color: white; font-size: 22px;">Cyanea City's Children's Charity Project</h2>
+                    <p style="color: rgba(255, 255, 255, 0.807);" class="title">CEO & Founder: Cyan Adarsh</p>
+                    <p style="color: white;">Our Youth, Our Future, Our Responsiblity - 
+                        Some kids grow up in unbelieveable conditions, growing up in a world where they always seem to be at a disadvantage.
+                    Our Children's Charity protects our Youth and provides them with the resources to grow into nuturing and mature people who care for our world.</p>
+                    <p style="color: white;">Contact Them: 0850 PROTECTINGKIDS</p>
+                    <p><a href="assessmentdonateform.html" class="hero-btn">Donate Now</a></p>
+                  </div>
+                </div>
+              </div>
+    
+
+            
+            </div>
+
+           
+              <div class="column">
+                <div class="card">
+                  <img src="Media/feedtheworld.png" style="width:450px; height: 243px;">
+                  <div class="container">
+                    <h2 style="color: white; font-size: 22px;">Narnia's Feed The World Service</h2>
+                    <p style="color: rgba(255, 255, 255, 0.807);" class="title">CEO & Founder: Cyan Adarsh</p>
+                    <p style="color: white; ">We provide food for those in the world who don't have it, we give people fresh, made-with-love meals
+                  and make sure no one feels like they're missing out on the things everyone in the world deserves.</p>
+                    <p style="color: white;">Contact Them: 0850 FEEDINGTHEWORLD</p>
+                    <p><a href="assessmentdonateform.html" class="hero-btn">Donate Now</a></p>
+                  </div>
+                </div>
+              </div>
+                      
+                        <div class="column">
+                          <div class="card">
+                            <img src="Media/Pets.jpeg" style="width:455px; height: 276px;">
+                            <div class="container">
+                              <h2 style="color: white; font-size: 24px;">Homes 4 Our Petz</h2>
+                              <p style="color: rgba(255, 255, 255, 0.807);" class="title">CEO & Founder: Cyan Adarsh</p>
+                              <p style="color: white; ">We give pets the homes they deserve, and have world-class 
+                                housing while they're waiting for their perfect owners.</p>
+                              <p style="color: white;">Contact Them: 0850 WELOVEPETZ</p>
+                              <p><a href="assessmentdonateform.html" class="hero-btn">Donate Now</a></p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="column">
+                            <div class="card">
+                              <img src="Media/Education4all.jpeg" style="width:450px; height:248px;">
+                              <div class="container">
+                                <h2 style="color: white; font-size: 21px;">Equality in Education 4 All Trust</h2>
+                                <p style="color: rgba(255, 255, 255, 0.807);" class="title">CEO & Founder: Cyan Adarsh</p>
+                                <p style="color: white;">We find Scholarships, afforable Tuition, extra-curriculars, internships and 
+                                    MORE to provide those in the world who are clueless and deprived of such luxuries. Education is important and 
+                                    something that everyone deserves.</p>
+                                <p style="color: white;">Contact Them: 0850 EDUCATION4ALL</p>
+                                <p><a href="assessmentdonateform.html" class="hero-btn">Donate Now</a></p>
+                              </div>
+                            </div>
+                          </div>
+                
+           
+  
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+          background-image: url('Media/CyanCity2.jpeg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;  
+          background-size: cover;
+          text-align: center; 
+          color: #f1f1f1;
+          font-weight: bold
+        }
+
+          .navbar {
+    width: 110%;
+    background-color: rgb(31, 30, 30);
+    overflow: auto;
+  }
+  
+  .navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: gray;
+  }
+  
+  .active {
+    background-color: rgb(18, 209, 209);
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(23, 202, 202);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  
+  
+  </style>
+  </head>
+  <body>
+  
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="assessmentplaces.html">Places of Interest</a>
+    <a href="assessmentnews.html">Latest News</a>
+    <a href="assessmentdonate.html">Donate</a>
+    <br>
+  <br>
+  <img width="220"; height="176" src="Media/CityFOrWebsite.jpeg" style="position: absolute; left: 15px;">
+    <br> <p2 style="color: rgba(255, 255, 255, 0.779); text-align: center; font-size: 26px;
+    position: absolute; left: 31px;">"A place where <br>
+      dreams come true <br>
+      and where trash <br>
+      gets recycled."
+  </p2>
+    
+  </div>
+  
+  </style>
+  
+  <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      </script>
+  
+  </head>
+  
+      <div class="navbar">
+          <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i>Home</a> 
+          <a href="assessmentplaces.html"><i class="fa fa-fw fa-envelope"></i> Places Of Interest</a> 
+          <a href="assessmentnews.html"><i class="fa fa-fw fa-user"></i>Latest News</a>
+          <a href="assessmentdonate.html"><i class="fa fa-fw fa-search"></i>Donate</a>
+          <span style="font-size: 36px; color:white; position:absolute; 
+          right: 30px;top:9px;" onclick="openNav()">&#8801;</span>
+        </div>
+       
+       <div  style="font-size: 36px; position: absolute; left: 300px; top: 135px;">
+        <p>Thank You So Much For Donating To An Admirable Cause!<br>
+Love From The...
+        </p>
+
+        <div id="cyanealogo">
+        </a>  <a href="index.html"><img width="340" height="300" src="Media/Cyanea Logo_.png" 
+        style="position: absolute; left: 290px; top: 110px;"> </a>
+            </div>
+  
+
+</body>
+</html>

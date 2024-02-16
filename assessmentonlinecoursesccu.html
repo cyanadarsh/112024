@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+body {background-color: #262626}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column { text-align: center; 
+  float: left;
+  width: 40.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(17, 17, 17, 0.617); width: 85%; 
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.navbar {
+  width: 110%;
+  background-color: rgb(31, 30, 30);
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: gray;
+}
+
+.active {
+  background-color: rgb(18, 209, 209);
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(23, 202, 202);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="assessmentplaces.html">Places of Interest</a>
+        <a href="assessmentnews.html">Latest News</a>
+        <a href="assessmentdonate.html">Donate</a>
+        <br>
+      <br>
+      <img width="220"; height="176" src="Media/CityFOrWebsite.jpeg" style="position: absolute; left: 15px;">
+        <br> <p2 style="color: rgba(255, 255, 255, 0.779); font-weight: bold; text-align: center; font-size: 26px;
+        position: absolute; left: 31px;">"A place where <br>
+          dreams come true <br>
+          and where trash <br>
+          gets recycled."
+      </p2>
+        
+      </div>
+      
+      </style>
+      
+      <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+      
+      </head>
+      
+          <div class="navbar">
+              <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i>Home</a> 
+              <a href="assessmentplaces.html"><i class="fa fa-fw fa-envelope"></i> Places of Interest</a> 
+              <a href="assessmentnews.html"><i class="fa fa-fw fa-user"></i>Latest News</a>
+              <a href="assessmentdonate.html"><i class="fa fa-fw fa-search"></i>Donate</a>
+              <span style="font-size: 36px; color:white; position:absolute; 
+              right: 30px;top:6px;" onclick="openNav()">&#8801;</span>
+            </div>
+            <br>
+            <div style="color: rgb(255, 255, 255); text-align: center; font-size: 24px;">
+                <h1>Look at our Most Popular and FREE Online Courses.</h1>
+                </div> 
+                <centre>
+    <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="Media/awesomeness.png" alt="Jane" style="width:90%">
+            <div class="container">
+              <h2 style="color: white;">#1 Awesomeness 101</h2>
+              <p class="title">Professor: Dr Juju</p>
+              <p style="color: white;">Learn How To Get Awesome, in depth.</p>
+              <p style="color: white;">Coolness Department Contact: <br> Phone: 0850 775 3284 <br> Email: CoolnessCCU@edu.com</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="row" >
+            <div class="column">
+              <div class="card">
+                <img src="Media/Service.jpeg" alt="Jane" style="width:90%">
+                <div class="container">
+                  <h2 style="color: white;">#2 Service and Kindness</h2>
+                  <p class="title">Professor: Dr ShaeShae</p>
+                  <p style="color: white;">Choose Kindness and Service, in depth.</p>
+                  <p style="color: white;">Values Department Contact: <br> Phone: 0850 645 6324 <br> Email: ValuesCCU@edu.com</p>
+                  </div>
+                </centre>
+   
+
+</body>
+</html>
